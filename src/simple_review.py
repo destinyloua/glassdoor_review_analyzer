@@ -9,12 +9,14 @@ def satisfaction(rating):
 
 def happiness(rating): 
     """Returns a string based on the employee's star rating."""
-    if rating < 2: 
+    if rating <= 2: 
         return "unhappy"
     elif rating == 3: 
         return "neutral"
-    else: 
+    elif rating > 3: 
         return "happy"
+    else: 
+        return "undetermined"
 
 class SimpleReview: 
     """Represents a condensed version of a review."""
