@@ -3,18 +3,18 @@ import pandas as pd
 # Defines the columns to include for extraction from the csv file 
 simple_bucket = ["rating", "status", "job", "title"]
 
-def satisfaction(percent): 
-    """Returns a conclusion describing an employee's satisfaction."""
-    return (f"This employee is {percent}% satisfied with their job.\n")
+def satisfaction(rating): 
+    """Converts the star rating to a percentage."""
+    return int((rating/5.0) * 100)
 
 def happiness(rating): 
-    """Returns a conclusion based on the employee's star rating."""
+    """Returns a string based on the employee's star rating."""
     if rating < 2: 
-        return("This employee is generally unhappy about their job.\n")
+        return "unhappy"
     elif rating == 3: 
-        return("This employee is neutral about their job.\n")
+        return "neutral"
     else: 
-        return("This employee is generally happy about their job.\n")
+        return "happy"
 
 class SimpleReview: 
     """Represents a condensed version of a review."""
@@ -28,15 +28,11 @@ class SimpleReview:
     def set_summary(self, summary_type): 
          """Sets the type of summary to be displayed with the review."""
          self.summary = summary_type
-
-    def get_rating_percentage(self): 
-        """Converts the star rating to a percentage."""
-        return int((self.rating/5.0) * 100)
     
     def get_summary(self): 
         """Returns a summary of the overall review."""
         if self.summary == "satisfaction":
-            return satisfaction(self.get_rating_percentage())
+            return satisfaction(self.rating)
         elif self.summary == "happiness": 
             return happiness(self.rating)
         else:
@@ -60,8 +56,6 @@ if __name__ == "__main__":
     for row in df.itertuples(index=False): 
         review = SimpleReview(row.rating, row.status, row.job, row.title)
         simple_reviews.append(review)
-    
-    # Output all reviews to terminal 
-    for review in simple_reviews: 
-        review.set_summary("happiness")
-        review.display_review() 
+
+    # Testing 
+    assert(len(simple_reviews) == 50)
