@@ -6,8 +6,8 @@ from simple_review import SimpleReview, happiness, satisfaction
 import pandas as pd
 import unittest
 
+# Mock data used for testing 
 r1 = SimpleReview(4, 'Current Employee', 'Manager', 'Great place to work.')
-
 
 class TestSimpleReview(unittest.TestCase): 
     def setUp(self): 
