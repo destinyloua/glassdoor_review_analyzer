@@ -16,7 +16,7 @@ class ReviewAnalyzer:
 
     def review_count(self) -> int:
         """Return the total number of reviews."""
-        return len(self.dataframe)ㅂ
+        return len(self.dataframe)
 
     def average_rating(self, rating_column: str = "overall_rating") -> float:
         """Return the average overall rating."""
