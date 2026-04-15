@@ -62,4 +62,3 @@ if __name__ == "__main__":
     # Testing 
     assert(len(simple_reviews) == 50)
 
-print
