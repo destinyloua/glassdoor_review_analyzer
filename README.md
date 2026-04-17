@@ -1,12 +1,12 @@
 # Glassdoor Review Analyzer
 
-A Python library for analyzing large-scale Glassdoor job review data (3.83 GB, 8M+ reviews) using PySpark.
+A Python library for analyzing large-scale Glassdoor job review data (3.83 GB, 8M+ reviews).
 
 ## Authors
 Adam Berbash, Destiny Louangsombath, Hajun Huh, Nour Tamam
 
 ## Course
-Final Project - Python Library Development
+PROG71090: Final Project - Python Library Development
 
 ## Dataset
 Glassdoor Job Reviews 2 (David Gauthier, 2024)
@@ -15,7 +15,6 @@ File size: 3.83 GB (all_reviews.csv)
 
 ## Dependencies
 - Python 3.9+
-- PySpark 3.4+
 - pandas, matplotlib, seaborn, kagglehub, pyyaml
 
 ## Installation
